@@ -26,7 +26,7 @@ set :log_level, ENV.fetch('LOG_LEVEL', :info)
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{tmp vendor/bundle}
+set :linked_dirs, %w{log tmp vendor/bundle}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -42,14 +42,6 @@ namespace :deploy do
     on roles(:all) do
       # Use `capture` instead of `execute` for not displaying $SETTINGS_FILE_PATH
       capture "cd #{release_path} && curl -Ls -o settings.yml #{ENV.fetch('SETTINGS_FILE_PATH')}"
-    end
-  end
-
-  desc 'Restart applications'
-  after :publishing, :restart do
-    on roles(:batch) do
-      invoke 'clockworkd:stop'
-      invoke 'clockworkd:start'
     end
   end
 end
