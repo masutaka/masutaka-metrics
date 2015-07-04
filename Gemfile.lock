@@ -7,6 +7,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    bini (0.7.0)
+      sys-proctable
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -19,20 +21,31 @@ GEM
       tzinfo
     colorize (0.7.7)
     daemons (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.7.0)
+    multi_json (1.11.1)
+    multi_xml (0.5.5)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
+    pushover (1.0.4)
+      bini (= 0.7.0)
+      httparty (= 0.11.0)
+      yajl-ruby (= 1.1.0)
     rake (10.4.2)
     sshkit (1.7.1)
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    sys-proctable (0.9.8)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -43,6 +56,7 @@ DEPENDENCIES
   capistrano-bundler
   clockwork
   daemons
+  pushover
 
 BUNDLED WITH
    1.10.5
