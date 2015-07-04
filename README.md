@@ -28,3 +28,7 @@ Create an awesome GitHub feed
 
     # Stop
     $ kill `cat tmp/clockworkd.clock.pid`
+
+## Automatically `$ bundle update`
+
+A pull request regularly creates by a trigger https://dashboard.heroku.com/apps/bu-blog-subscribers-number
