@@ -28,6 +28,10 @@ Create an awesome GitHub feed
     # Stop
     $ bundle exec clockworkd -c lib/clockwork.rb --log stop
 
-## Automatically `$ bundle update`
+## Automatic deployment
+
+When any commits are pushed to master, [CircleCI will deploy to masutaka.net](https://circleci.com/gh/masutaka/blog-subscribers-number/tree/master).
+
+## Automatic `$ bundle update`
 
 A pull request regularly creates by a trigger https://dashboard.heroku.com/apps/bu-blog-subscribers-number
