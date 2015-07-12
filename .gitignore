@@ -1,7 +1,8 @@
 /.bundle
 /.envrc
 /config/newrelic.yml
+/log/newrelic_agent.log
 /settings.yml
-/tmp/clockworkd.clock.output
-/tmp/clockworkd.clock.pid
+/tmp/clockworkd.clockwork.output
+/tmp/clockworkd.clockwork.pid
 /vendor/bundle
