@@ -18,15 +18,19 @@ Post my blog subscriber number to GrowthForecast
 
 Modify settings.yml
 
-### Clockworkd
+### Clockwork
 
 Create an awesome GitHub feed
 
     # Start
-    $ bundle exec clockworkd -c lib/clockwork.rb --log start
+    $ bundle exec clockwork clockwork.rb
 
-    # Stop
-    $ bundle exec clockworkd -c lib/clockwork.rb --log stop
+    # Start daemon
+    $ export NRCONFIG=`pwd`/config/newrelic.yml
+    $ bundle exec clockworkd -c clockwork.rb --log start
+
+    # Stop daemon
+    $ bundle exec clockworkd -c clockwork.rb --log stop
 
 ## Automatic deployment
 

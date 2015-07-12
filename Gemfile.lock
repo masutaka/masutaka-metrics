@@ -35,6 +35,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
+    newrelic_rpm (3.12.1.298)
     pushover (1.0.4)
       bini (= 0.7.0)
       httparty (= 0.11.0)
@@ -60,6 +61,7 @@ DEPENDENCIES
   capistrano-clockwork
   clockwork
   daemons
+  newrelic_rpm
   pushover
 
 BUNDLED WITH

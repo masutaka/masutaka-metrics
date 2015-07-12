@@ -29,19 +29,26 @@ set :log_level, ENV.fetch('LOG_LEVEL', :info)
 set :linked_dirs, %w{log tmp vendor/bundle}
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, {
+      'NEW_RELIC_ENV' => 'production',
+      'NRCONFIG'      => current_path.join('config', 'newrelic.yml'),
+    }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
 set :bundle_path, -> { shared_path.join('vendor', 'bundle') }
+set :clockwork_file, -> { 'clockwork.rb' }
+
+after 'deploy:updated', 'newrelic:notice_deployment'
 
 namespace :deploy do
   desc 'Get settings.yml'
   before :updated, :setting_file do
     on roles(:all) do
-      # Use `capture` instead of `execute` for not displaying $SETTINGS_FILE_PATH
+      # Use `capture` instead of `execute` for not displaying environment variables in CircleCI
       capture "cd #{release_path} && curl -Ls -o settings.yml #{ENV.fetch('SETTINGS_FILE_PATH')}"
+      capture "cd #{release_path} && curl -Ls -o config/newrelic.yml #{ENV.fetch('NEWRELIC_FILE_PATH')}"
     end
   end
 end
