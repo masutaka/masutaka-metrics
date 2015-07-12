@@ -6,6 +6,8 @@ require_relative 'blog_subscribers_number'
 require_relative 'blog_subscribers_number/growth_forecast'
 require_relative 'blog_subscribers_number/social_service'
 
+GC::Profiler.enable
+
 path = File.join(__dir__, '..', 'settings.yml')
 settings = YAML.load(ERB.new(IO.read(path)).result)
 
