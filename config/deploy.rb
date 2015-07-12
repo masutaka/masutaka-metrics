@@ -35,6 +35,7 @@ set :linked_dirs, %w{log tmp vendor/bundle}
 # set :keep_releases, 5
 
 set :bundle_path, -> { shared_path.join('vendor', 'bundle') }
+set :clockwork_file, -> { 'clockwork.rb' }
 
 after 'deploy:updated', 'newrelic:notice_deployment'
 
