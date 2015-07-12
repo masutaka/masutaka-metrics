@@ -1,5 +1,6 @@
 /.bundle
 /.envrc
+/config/newrelic.yml
 /settings.yml
 /tmp/clockworkd.clock.output
 /tmp/clockworkd.clock.pid
