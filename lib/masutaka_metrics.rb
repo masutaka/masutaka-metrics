@@ -1,7 +1,7 @@
 require 'clockwork'
 require 'logger'
 
-class BlogSubscribersNumber
+class MasutakaMetrics
   def initialize(settings)
     @growth_forecast = GrowthForecast.new(settings)
     @feedly = Feedly.new(settings)

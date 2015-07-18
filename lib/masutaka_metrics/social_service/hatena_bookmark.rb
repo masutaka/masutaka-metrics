@@ -1,7 +1,7 @@
 require 'net/http'
 require 'rexml/document'
 
-class BlogSubscribersNumber
+class MasutakaMetrics
   class HatenaBookmark < SocialService
     def count
       # http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount#total

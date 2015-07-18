@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-class BlogSubscribersNumber
+class MasutakaMetrics
   class Feedly < SocialService
     def subscribers
       # http://developer.feedly.com/v3/feeds/#get-the-metadata-about-a-specific-feed

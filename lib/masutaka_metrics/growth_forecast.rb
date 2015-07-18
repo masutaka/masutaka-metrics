@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 
-class BlogSubscribersNumber
+class MasutakaMetrics
   class GrowthForecast
     def initialize settings
       @url          = settings['growth_forecast']['url']

@@ -1,14 +1,14 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'blog-subscribers-number'
-set :repo_url, 'git@github.com:masutaka/blog-subscribers-number.git'
+set :application, 'masutaka-metrics'
+set :repo_url, 'git@github.com:masutaka/masutaka-metrics.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/opt/blog-subscribers-number'
+set :deploy_to, '/opt/masutaka-metrics'
 
 # Default value for :scm is :git
 # set :scm, :git

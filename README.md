@@ -1,6 +1,6 @@
-# Blog Subscribers Number
+# masutaka metrics
 
-Post my blog subscriber number to GrowthForecast
+Post masutaka metrics to GrowthForecast
 
 * [feedly](https://feedly.com/)
 * [Hatena::Bookmark](http://b.hatena.ne.jp/)
@@ -34,8 +34,8 @@ Create an awesome GitHub feed
 
 ## Automatic deployment
 
-When any commits are pushed to master, [CircleCI will deploy to masutaka.net](https://circleci.com/gh/masutaka/blog-subscribers-number/tree/master).
+When any commits are pushed to master, [CircleCI will deploy to masutaka.net](https://circleci.com/gh/masutaka/masutaka-metrics/tree/master).
 
 ## Automatic `$ bundle update`
 
-A pull request regularly creates by a trigger https://dashboard.heroku.com/apps/bu-blog-subscribers-number
+A pull request regularly creates by a trigger https://dashboard.heroku.com/apps/bu-masutaka-metrics

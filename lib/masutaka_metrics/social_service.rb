@@ -1,4 +1,4 @@
-class BlogSubscribersNumber
+class MasutakaMetrics
   class SocialService
     def initialize(settings)
       @blog_url = settings['blog']['url']
