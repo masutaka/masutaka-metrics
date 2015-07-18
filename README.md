@@ -20,8 +20,6 @@ Modify config/settings.yml
 
 ### Clockwork
 
-Create an awesome GitHub feed
-
     # Start
     $ bundle exec clockwork clockwork.rb
 
