@@ -14,9 +14,9 @@ Post my blog subscriber number to GrowthForecast
 
 ### Setup
 
-    $ cp settings.example.yml settings.yml
+    $ cp config/settings.example.yml config/settings.yml
 
-Modify settings.yml
+Modify config/settings.yml
 
 ### Clockwork
 
