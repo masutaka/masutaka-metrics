@@ -36,4 +36,4 @@ When any commits are pushed to master, [CircleCI will deploy to masutaka.net](ht
 
 ## Automatic `$ bundle update`
 
-A pull request regularly creates by a trigger https://dashboard.heroku.com/apps/bu-masutaka-metrics
+Automatically update by https://www.deppbot.com
