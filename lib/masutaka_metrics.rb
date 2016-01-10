@@ -29,7 +29,7 @@ class MasutakaMetrics
     @growth_forecast.post_feedly(subscribers)
     @logger.info("feedly subscribers: #{subscribers}")
   rescue => e
-    @logger.warn("feedly subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' ')}")
+    @logger.error("feedly subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' ')}")
   end
 
   def post_livedoor_reader
@@ -37,7 +37,7 @@ class MasutakaMetrics
     @growth_forecast.post_livedoor_reader(subscribers)
     @logger.info("livedoor_reader subscribers: #{subscribers}")
   rescue => e
-    @logger.warn("livedoor_reader subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' ')}")
+    @logger.error("livedoor_reader subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' ')}")
   end
 
   def post_hatena_bookmark
@@ -45,6 +45,6 @@ class MasutakaMetrics
     @growth_forecast.post_hatena_bookmark(subscribers)
     @logger.info("hatena_bookmark subscribers: #{subscribers}")
   rescue => e
-    @logger.warn("hatena_bookmark subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' ')}")
+    @logger.error("hatena_bookmark subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' ')}")
   end
 end
