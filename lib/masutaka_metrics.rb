@@ -38,6 +38,7 @@ class MasutakaMetrics
 
   def post_hatena_bookmark
     subscribers = @hatena_bookmark.count
+    return unless subscribers
     @growth_forecast.post_hatena_bookmark(subscribers)
     @logger.info("hatena_bookmark subscribers: #{subscribers}")
   end
