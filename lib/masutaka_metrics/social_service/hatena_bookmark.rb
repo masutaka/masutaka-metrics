@@ -22,7 +22,6 @@ EOS
       end
 
       doc = REXML::Document.new(response.body)
-      return nil unless doc
       doc.elements['/methodResponse/params/param/value/int'].text.to_i
     end
   end
