@@ -20,6 +20,8 @@ EOS
         header = {
           'Content-Type'   => 'text/xml; charset=utf-8',
           'Content-Length' => request.bytesize.to_s,
+          # Avoid '503 Service Temporarily Unavailable'
+          'User-Agent'     => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
         }
         http.request_post('/xmlrpc', request, header)
       end
