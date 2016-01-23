@@ -17,7 +17,10 @@ class MasutakaMetrics
   </params>
 </methodCall>
 EOS
-        header = {'Content-Type' => 'text/xml; charset=utf-8', 'Content-Length' => request.bytesize.to_s}
+        header = {
+          'Content-Type'   => 'text/xml; charset=utf-8',
+          'Content-Length' => request.bytesize.to_s,
+        }
         http.request_post('/xmlrpc', request, header)
       end
 
