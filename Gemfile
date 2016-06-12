@@ -4,6 +4,7 @@ ruby '2.3.1'
 gem 'activesupport'
 gem 'clockwork'
 gem 'daemons'
+gem 'fluent-logger'
 gem 'newrelic_rpm'
 
 group :development do
