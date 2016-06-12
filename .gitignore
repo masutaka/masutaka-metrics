@@ -2,6 +2,7 @@
 /.envrc
 /config/newrelic.yml
 /config/settings.yml
+/log/capistrano.log
 /log/newrelic_agent.log
 /tmp/clockworkd.clockwork.output
 /tmp/clockworkd.clockwork.pid
