@@ -21,9 +21,9 @@ class MasutakaMetrics
 
   def post
     metrics = {
-      'Feedly'           => post_feedly,
-      'HatenaBookmark'   => post_hatena_bookmark,
-      'LiveDwangoReader' => post_livedoor_reader,
+      'feedly'             => post_feedly,
+      'hatena_bookmark'    => post_hatena_bookmark,
+      'live_dwango_reader' => post_livedoor_reader,
     }
 
     @logger.info("metrics: #{metrics}")
