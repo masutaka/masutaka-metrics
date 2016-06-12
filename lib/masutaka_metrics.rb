@@ -1,4 +1,5 @@
 require 'clockwork'
+require 'fluent-logger'
 require 'logger'
 
 class MasutakaMetrics
@@ -8,7 +9,7 @@ class MasutakaMetrics
     @livedoor_reader = LivedoorReader.new(settings)
     @hatena_bookmark = HatenaBookmark.new(settings)
     @fetch_interval_seconds = settings['fetch_interval_seconds']
-    @fluent_logger_wrapper = FluentLoggerWrapper.new
+    @fluent_logger = ::Fluent::Logger::FluentLogger.new
     @logger = Logger.new(STDOUT)
   end
 
@@ -36,8 +37,8 @@ class MasutakaMetrics
 
     @logger.info("metrics: #{metrics}")
 
-    unless @fluent_logger_wrapper.post(metrics)
-      @logger.error("FluentLogger: #{@fluent_logger_wrapper.last_error}")
+    unless @fluent_logger.post('masutaka.metrics', metrics)
+      @logger.warn("FluentLogger: #{@fluent_logger.last_error}")
     end
   end
 
