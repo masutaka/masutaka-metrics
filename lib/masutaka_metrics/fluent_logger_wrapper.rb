@@ -1,7 +1,12 @@
 require 'fluent-logger'
+require 'forwardable'
 
 class MasutakaMetrics
   class FluentLoggerWrapper
+    extend Forwardable
+
+    delegate [:last_error] => :fluent_logger
+
     def post(map)
       tag = 'masutaka.metrics'
 
@@ -16,10 +21,6 @@ class MasutakaMetrics
       end
 
       false
-    end
-
-    def last_error
-      fluent_logger.last_error
     end
 
     private
