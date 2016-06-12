@@ -28,12 +28,15 @@ GEM
       activesupport
       tzinfo
     daemons (1.2.3)
+    fluent-logger (0.5.1)
+      msgpack (>= 0.4.4, < 0.6.0, != 0.5.3, != 0.5.2, != 0.5.1, != 0.5.0)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.9.0)
+    msgpack (0.5.12)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     net-scp (1.2.1)
@@ -64,6 +67,7 @@ DEPENDENCIES
   capistrano-clockwork
   clockwork
   daemons
+  fluent-logger
   newrelic_rpm
   pushover
 
