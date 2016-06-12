@@ -1,3 +1,10 @@
+fluent:
+  host:
+    localhost
+  port:
+    24224
+  tag:
+    your.tag
 growth_forecast:
   url:
     http://example.com:5125

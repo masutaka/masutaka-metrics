@@ -9,7 +9,8 @@ class MasutakaMetrics
     @livedoor_reader = LivedoorReader.new(settings)
     @hatena_bookmark = HatenaBookmark.new(settings)
     @fetch_interval_seconds = settings['fetch_interval_seconds']
-    @fluent_logger = ::Fluent::Logger::FluentLogger.new
+    @fluent_logger = ::Fluent::Logger::FluentLogger.new(nil, host: settings['fluent']['host'], port: settings['fluent']['port'])
+    @fluent_tag = settings['fluent']['tag']
     @logger = Logger.new(STDOUT)
   end
 
@@ -37,7 +38,7 @@ class MasutakaMetrics
 
     @logger.info("metrics: #{metrics}")
 
-    unless @fluent_logger.post('masutaka.metrics', metrics)
+    unless @fluent_logger.post(@fluent_tag, metrics)
       # will be retry at next time or program exiting
       @logger.warn("FluentLogger: #{@fluent_logger.last_error}")
     end
