@@ -20,11 +20,19 @@ class MasutakaMetrics
   private
 
   def post
-    metrics = {
-      'feedly'             => post_feedly,
-      'hatena_bookmark'    => post_hatena_bookmark,
-      'live_dwango_reader' => post_livedoor_reader,
-    }
+    feedly_subscribers = post_feedly
+    hatena_bookmark_count = post_hatena_bookmark
+    livedoor_reader_count = post_livedoor_reader
+
+    metrics = {}
+    metrics['feedly'] = feedly_subscribers if feedly_subscribers
+    metrics['hatena_bookmark'] = hatena_bookmark_count if hatena_bookmark_count
+    metrics['live_dwango_reader'] = livedoor_reader_count if livedoor_reader_count
+
+    if metrics.empty?
+      @logger.error('metrics is empty.')
+      return false
+    end
 
     @logger.info("metrics: #{metrics}")
 
@@ -40,6 +48,7 @@ class MasutakaMetrics
     subscribers
   rescue => e
     @logger.error("feedly subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' | ')}")
+    nil
   end
 
   def post_livedoor_reader
@@ -49,6 +58,7 @@ class MasutakaMetrics
     subscribers
   rescue => e
     @logger.error("livedoor_reader subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' | ')}")
+    nil
   end
 
   def post_hatena_bookmark
@@ -58,5 +68,6 @@ class MasutakaMetrics
     subscribers
   rescue => e
     @logger.error("hatena_bookmark subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' | ')}")
+    nil
   end
 end
