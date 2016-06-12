@@ -38,6 +38,7 @@ class MasutakaMetrics
     @logger.info("metrics: #{metrics}")
 
     unless @fluent_logger.post('masutaka.metrics', metrics)
+      # will be retry at next time or program exiting
       @logger.warn("FluentLogger: #{@fluent_logger.last_error}")
     end
   end
