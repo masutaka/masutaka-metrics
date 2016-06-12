@@ -44,7 +44,7 @@ GEM
       bini (= 0.7.0)
       httparty (= 0.11.0)
       yajl-ruby (= 1.1.0)
-    rake (11.1.2)
+    rake (11.2.2)
     sshkit (1.10.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
