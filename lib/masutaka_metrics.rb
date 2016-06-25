@@ -21,14 +21,12 @@ class MasutakaMetrics
   private
 
   def post
-    feedly_subscribers = post_feedly
-    hatena_bookmark_count = post_hatena_bookmark
-    livedoor_reader_count = post_livedoor_reader
-
     metrics = {}
-    metrics['feedly'] = feedly_subscribers if feedly_subscribers
-    metrics['hatena_bookmark'] = hatena_bookmark_count if hatena_bookmark_count
-    metrics['live_dwango_reader'] = livedoor_reader_count if livedoor_reader_count
+    metrics['feedly'] = feedly_count
+    metrics['hatena_bookmark'] = hatena_bookmark_count
+    metrics['live_dwango_reader'] = live_dwango_reader_count
+
+    metrics.select! { |k,v| v != nil }
 
     if metrics.empty?
       @logger.error('metrics is empty.')
@@ -43,7 +41,7 @@ class MasutakaMetrics
     end
   end
 
-  def post_feedly
+  def feedly_count
     subscribers = @feedly.subscribers
     @logger.info("feedly subscribers: #{subscribers}")
     subscribers
@@ -52,7 +50,7 @@ class MasutakaMetrics
     nil
   end
 
-  def post_livedoor_reader
+  def live_dwango_reader_count
     subscribers = @livedoor_reader.subscribers
     @logger.info("livedoor_reader subscribers: #{subscribers}")
     subscribers
@@ -61,7 +59,7 @@ class MasutakaMetrics
     nil
   end
 
-  def post_hatena_bookmark
+  def hatena_bookmark_count
     subscribers = @hatena_bookmark.count
     @logger.info("hatena_bookmark subscribers: #{subscribers}")
     subscribers
@@ -70,3 +68,4 @@ class MasutakaMetrics
     nil
   end
 end
+
