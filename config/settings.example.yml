@@ -5,13 +5,6 @@ fluent:
     24224
   tag:
     your.tag
-growth_forecast:
-  url:
-    http://example.com:5125
-  service_name:
-    any_service_name
-  section_name:
-    any_section_name
 blog:
   url:
     http://blog.example.com/

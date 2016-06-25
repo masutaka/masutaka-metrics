@@ -1,6 +1,6 @@
 # masutaka metrics
 
-Post masutaka metrics to fluentd and GrowthForecast
+Post masutaka metrics to fluentd
 
 * [feedly](https://feedly.com/)
 * [Hatena::Bookmark](http://b.hatena.ne.jp/)
@@ -11,7 +11,6 @@ Post masutaka metrics to fluentd and GrowthForecast
 ### Require
 
 * [fluentd](http://www.fluentd.org/)
-* [GrowthForecast](http://kazeburo.github.io/GrowthForecast/)
 
 ### Setup
 
