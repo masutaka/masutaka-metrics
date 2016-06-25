@@ -4,7 +4,6 @@ require 'logger'
 
 class MasutakaMetrics
   def initialize(settings)
-    @growth_forecast = GrowthForecast.new(settings)
     @feedly = Feedly.new(settings)
     @livedoor_reader = LivedoorReader.new(settings)
     @hatena_bookmark = HatenaBookmark.new(settings)
@@ -46,7 +45,6 @@ class MasutakaMetrics
 
   def post_feedly
     subscribers = @feedly.subscribers
-    @growth_forecast.post_feedly(subscribers)
     @logger.info("feedly subscribers: #{subscribers}")
     subscribers
   rescue => e
@@ -56,7 +54,6 @@ class MasutakaMetrics
 
   def post_livedoor_reader
     subscribers = @livedoor_reader.subscribers
-    @growth_forecast.post_livedoor_reader(subscribers)
     @logger.info("livedoor_reader subscribers: #{subscribers}")
     subscribers
   rescue => e
@@ -66,7 +63,6 @@ class MasutakaMetrics
 
   def post_hatena_bookmark
     subscribers = @hatena_bookmark.count
-    @growth_forecast.post_hatena_bookmark(subscribers)
     @logger.info("hatena_bookmark subscribers: #{subscribers}")
     subscribers
   rescue => e
