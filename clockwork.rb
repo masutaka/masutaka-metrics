@@ -3,7 +3,6 @@ require 'erb'
 require 'newrelic_rpm'
 require 'yaml'
 require_relative 'lib/masutaka_metrics'
-require_relative 'lib/masutaka_metrics/growth_forecast'
 require_relative 'lib/masutaka_metrics/social_service'
 
 GC::Profiler.enable
