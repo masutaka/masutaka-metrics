@@ -50,21 +50,21 @@ class MasutakaMetrics
     nil
   end
 
-  def live_dwango_reader_count
-    subscribers = @livedoor_reader.subscribers
-    @logger.info("livedoor_reader subscribers: #{subscribers}")
-    subscribers
-  rescue => e
-    @logger.error("livedoor_reader subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' | ')}")
-    nil
-  end
-
   def hatena_bookmark_count
     subscribers = @hatena_bookmark.count
     @logger.info("hatena_bookmark subscribers: #{subscribers}")
     subscribers
   rescue => e
     @logger.error("hatena_bookmark subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' | ')}")
+    nil
+  end
+
+  def live_dwango_reader_count
+    subscribers = @livedoor_reader.subscribers
+    @logger.info("livedoor_reader subscribers: #{subscribers}")
+    subscribers
+  rescue => e
+    @logger.error("livedoor_reader subscribers: unknown, class=#{e.class}, backtrace=#{e.backtrace.join(' | ')}")
     nil
   end
 end
