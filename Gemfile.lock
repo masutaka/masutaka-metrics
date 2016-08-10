@@ -22,12 +22,12 @@ GEM
     capistrano-clockwork (1.0.1)
       capistrano (~> 3.5)
       daemons (~> 1.2)
-    capistrano-harrow (0.5.2)
+    capistrano-harrow (0.5.3)
     clockwork (2.0.0)
       activesupport
       tzinfo
     concurrent-ruby (1.0.2)
-    daemons (1.2.3)
+    daemons (1.2.4)
     fluent-logger (0.5.1)
       msgpack (>= 0.4.4, < 0.6.0, != 0.5.3, != 0.5.2, != 0.5.1, != 0.5.0)
     httparty (0.11.0)
@@ -47,7 +47,7 @@ GEM
       httparty (= 0.11.0)
       yajl-ruby (= 1.1.0)
     rake (11.2.2)
-    sshkit (1.11.1)
+    sshkit (1.11.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     sys-proctable (1.1.1)
