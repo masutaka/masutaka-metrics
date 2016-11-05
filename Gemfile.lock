@@ -28,7 +28,7 @@ GEM
       tzinfo
     concurrent-ruby (1.0.2)
     daemons (1.2.4)
-    fluent-logger (0.6.0)
+    fluent-logger (0.6.1)
       msgpack (>= 0.5.6, < 2)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -47,7 +47,7 @@ GEM
       httparty (= 0.11.0)
       yajl-ruby (= 1.1.0)
     rake (11.3.0)
-    sshkit (1.11.3)
+    sshkit (1.11.4)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     sys-proctable (1.1.3)
