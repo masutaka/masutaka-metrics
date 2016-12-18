@@ -23,6 +23,10 @@ require 'capistrano/bundler'
 # require 'capistrano/rails/migrations'
 # require 'capistrano/passenger'
 
+# To use Git
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
+
 require 'capistrano/clockwork'
 require 'new_relic/recipes'
 
