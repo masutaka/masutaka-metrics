@@ -10,9 +10,6 @@ set :repo_url, 'git@github.com:masutaka/masutaka-metrics.git'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/opt/masutaka-metrics'
 
-# Default value for :scm is :git
-# set :scm, :git
-
 # Default value for :format is :pretty
 # set :format, :pretty
 
