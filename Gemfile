@@ -11,5 +11,6 @@ group :development do
   gem 'capistrano', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-clockwork', require: false
+  gem 'ffi' # workaround https://masutaka.net/chalow/2016-12-10-1.html
   gem 'pushover', require: false
 end
