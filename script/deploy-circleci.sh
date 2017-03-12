@@ -11,4 +11,4 @@ EOF
 
 ssh-add $HOME/.ssh/id_circleci_github
 
-bundle exec cap prod deploy
+bundle exec cap production deploy
