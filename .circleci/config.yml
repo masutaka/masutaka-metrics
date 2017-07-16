@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker: &docker
-      - image: ruby:2.4.1-alpine
+      - image: ruby:2.3.3-alpine
     working_directory: /work
     branches:
       only:
