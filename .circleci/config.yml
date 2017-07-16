@@ -40,4 +40,4 @@ jobs:
             # See https://circleci.com/gh/masutaka/masutaka-metrics/edit#ssh
             - "a3:d5:cc:2d:b5:d3:ad:19:f2:50:5f:61:34:f4:35:74"
       - deploy:
-          commands: .circleci/deploy-circleci.sh
+          command: .circleci/deploy-circleci.sh
