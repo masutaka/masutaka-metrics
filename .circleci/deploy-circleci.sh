@@ -4,11 +4,13 @@
 curl -Ls -o config/newrelic.yml $NEWRELIC_FILE_PATH
 
 cat <<EOF >> $HOME/.ssh/config
-Host masutaka.net
   User masutaka
   ForwardAgent yes
 EOF
 
-ssh-add $HOME/.ssh/id_circleci_github
+# Add the preferred key for getting GitHub Permission
+# See https://circleci.com/gh/masutaka/masutaka-metrics/edit#checkout
+eval $(ssh-agent)
+ssh-add
 
 bundle exec cap production deploy
