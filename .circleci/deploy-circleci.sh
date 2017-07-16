@@ -8,6 +8,8 @@ cat <<EOF >> $HOME/.ssh/config
   ForwardAgent yes
 EOF
 
+cat $HOME/.ssh/config
+
 # Add the preferred key for getting GitHub Permission
 # See https://circleci.com/gh/masutaka/masutaka-metrics/edit#checkout
 eval $(ssh-agent)
