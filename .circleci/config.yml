@@ -6,7 +6,7 @@ jobs:
     working_directory: /work
     branches:
       only:
-        - circleci-2.0
+        - master
     steps:
       - run: &setup_requirements
           name: Install System Dependencies
